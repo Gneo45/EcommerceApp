@@ -19,7 +19,7 @@ import useStyles from "./styles";
 import AddressForm from "../AddressForm";
 import PaymentForm from "../PaymentForm";
 
-const steps = ["Shipping address", "Payment details"];
+const steps = ["Adresse de livraison", "details de paiement"];
 
 const Checkout = ({ cart,order,onCaptureCheckout,error }) => {
   const [activeStep, setActiveStep] = useState(0);
@@ -66,7 +66,7 @@ const Checkout = ({ cart,order,onCaptureCheckout,error }) => {
   
   <>
   <div>
-      <Typography variant="h5">Thank You for your purchase, {order.customer.firstname} {order.customer.lastname}</Typography>
+      <Typography variant="h5">Merci pour votre achat ! {order.customer.firstname} {order.customer.lastname}</Typography>
       <Divider className={classes.divider} />
       <Typography variant="subtitle2">Order ref:{order.customer_reference}</Typography>
   </div>
@@ -77,7 +77,7 @@ const Checkout = ({ cart,order,onCaptureCheckout,error }) => {
     ) : isFinished ? (
         <>
         <div>
-            <Typography variant="h5">Thank You for your purchase</Typography>
+            <Typography variant="h5">Merci pour votre achat ! </Typography>
             <Divider className={classes.divider} />
             
         </div>
@@ -95,13 +95,13 @@ const Checkout = ({ cart,order,onCaptureCheckout,error }) => {
         <>
         <Typography variant="h5">Error: {error}</Typography>
         <br />
-        <Button component={Link} to="/" varaint="outlined" type="button">Back toHome</Button>
+        <Button component={Link} to="/" variant="outlined" type="button">Back toHome</Button>
         </>
     }
 
   const Form = () =>
     activeStep === 0 ? (
-      <AddressForm checkoutToken={checkoutToken} next={next} />
+      <AddressForm checkoutToken={checkoutToken} next={next} nextStep={nextStep} setShippingData={setShippingData}/>
     ) : (
       <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} timeout={timeout}/>
     );
@@ -111,10 +111,10 @@ const Checkout = ({ cart,order,onCaptureCheckout,error }) => {
     <CssBaseline />
       <div className={mergeClasses.toolbar} />
 
-      <main className={mergeClasses.layout}>
+      <main className={mergeClasses.layout} >
         <Paper className={classes.paper}>
           <Typography variant="h4" align="center">
-            Checkout
+            Valider votre commande
           </Typography>
           <Stepper activeStep={0} className={classes.stepper}>
             {steps.map((step) => (

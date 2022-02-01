@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart, Checkout } from "./components";
-import { CardTravel } from "@material-ui/icons";
+import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Products, Navbar, Cart, Checkout } from "./components";
+import { commerce } from "./lib/commerce";
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -72,7 +74,8 @@ const App = () => {
   console.log(cart);
   return (
     <Router>
-      <div>
+      <div style={{ display: 'flex'}}>
+        <CssBaseline />
         <Navbar totalItems={cart.total_items} />
         <Routes>
           <Route

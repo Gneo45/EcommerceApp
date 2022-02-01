@@ -24,7 +24,7 @@ return <div>{product.name} <img src={product.image.url} alt="img"></img> </div> 
                         {product.price.formatted_with_symbol}
                     </Typography>
               </div>
-              <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="body2" color="textSecondary"/>
+              <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="body2" color="primary"/>
           </CardContent>
           <CardActions disableSpacing className={classes.cardActions}>
               <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>

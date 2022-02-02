@@ -74,7 +74,7 @@ const App = () => {
   console.log(cart);
   return (
     <Router>
-      <div style={{ display: 'flex'}}>
+      <div style={{ display: 'flex', backgroundColor: '#111'}}>
         <CssBaseline />
         <Navbar totalItems={cart.total_items} />
         <Routes>

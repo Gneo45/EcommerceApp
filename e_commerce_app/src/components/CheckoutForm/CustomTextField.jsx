@@ -6,7 +6,7 @@ const FormInput = ({ name, label, isError }) => {
   const { control } = useFormContext();
 
   return (
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={'auto'} sm={6} >
     <InputLabel>{label}</InputLabel>
     <Controller
         render={({ field }) => <TextField {...field} />}

@@ -13,8 +13,8 @@ const Cart = ({
   const classes = useStyles();
 
   const EmptyCart = () => (
-    <Typography variant="subtitle1">
-      Votre panier est vide 😕
+    <Typography variant="subtitle1" className={classes.InfoNoArticles}>
+      Votre panier est vide <br />
       <Link to="/" className={classes.link}>
         Ajouter des articles !🤩
       </Link>
@@ -31,10 +31,10 @@ const Cart = ({
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">
+        <Typography className={classes.total} variant="h4" >
           Total: {cart.subtotal.formatted_with_symbol}
         </Typography>
-        <div>
+        <div className={classes.btnContainer}>
           <Button
             className={classes.emptyButton}
             size="large"

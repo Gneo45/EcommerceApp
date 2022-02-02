@@ -17,17 +17,17 @@ return <div>{product.name} <img src={product.image.url} alt="img"></img> </div> 
           <CardMedia className={classes.media} image={product.image.url} title={product.name} />
           <CardContent>
               <div className={classes.cardContent}>
-                    <Typography variant="h5" gutterBottom>
+                    <Typography variant="h6" gutterBottom className={classes.articleName}>
                         {product.name}
                     </Typography>
-                    <Typography variant="h5" gutterBottom>
+                    <Typography variant="h6" gutterBottom>
                         {product.price.formatted_with_symbol}
                     </Typography>
               </div>
-              <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="body2" color="primary"/>
+              <Typography className={classes.typoDescription} dangerouslySetInnerHTML={{__html: product.description}} variant="body2" color="primary"/>
           </CardContent>
           <CardActions disableSpacing className={classes.cardActions}>
-              <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>
+              <IconButton className={classes.cartIcon} aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>
                   <AddShoppingCart />
               </IconButton>
           </CardActions>

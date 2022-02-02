@@ -5,7 +5,7 @@ const Review = ({ checkoutToken }) => {
   return (
     <>
       <Typography variant="h6" gutterBottom>
-        Order Summary
+        Résumé de la commande :
       </Typography>
       <List disablePadding>
         {checkoutToken.live.line_items.map((product) => (

@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
   title: {
     border: '1px solid black',
     marginTop: '5%',
-    textAlign:'center', 
+    textAlign:'center',
    
     backgroundColor: "#222",
     color: '#fff',
